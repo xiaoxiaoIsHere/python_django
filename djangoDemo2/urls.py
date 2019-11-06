@@ -15,7 +15,13 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-
+from django.conf.urls import url
+from app_demo import views
 urlpatterns = [
     path('admin/', admin.site.urls),
+    url(r'^insert/', views.insert),
+    url(r'^find/', views.find),
+    url(r'^modify/(?P<studentNum>\d+)', views.modify),
+    url(r'^delete/(?P<studentNum>.+)', views.delete),
+    url(r'^insert/', views.insert)
 ]
